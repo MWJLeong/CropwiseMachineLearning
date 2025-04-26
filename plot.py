@@ -44,13 +44,13 @@ for nutrient in NUTRIENTS:
         axes[0].scatter(humidity_range, yield_hum, c='green', label='Yield')
         axes[0].set_title(f'{crop} - {nutrient} vs Humidity')
         axes[0].set_xlabel('Humidity (%)')
-        axes[0].set_ylabel('Yield (kg/ha)')
+        axes[0].set_ylabel('Yield (tonnes/ha)')
 
         yield_temp = predict_yield_over_temperature(nutrient, crop)
         axes[1].scatter(temperature_range, yield_temp, c='blue', label='Yield')
         axes[1].set_title(f'{crop} - {nutrient} vs Temperature')
         axes[1].set_xlabel('Temperature (°C)')
-        axes[1].set_ylabel('Yield (kg/ha)')
+        axes[1].set_ylabel('Yield (tonnes/ha)')
 
         plt.tight_layout()
         plt.savefig(f'plots/{nutrient}_{crop}_scatter.png', dpi=300, bbox_inches='tight')
